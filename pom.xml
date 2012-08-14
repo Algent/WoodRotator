@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.algent</groupId>
 	<artifactId>WoodRotator</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<name>WoodRotator</name>
 	<url>https://github.com/Algent/WoodRotator</url>
 	<description>Plugin for bukkit to rotate wood blocks.</description>
@@ -14,6 +14,10 @@
 		<repository>
 			<id>bukkit-repo</id>
 			<url>http://repo.bukkit.org/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>sk89q-repo</id>
+			<url>http://maven.sk89q.com/repo/</url>
 		</repository>
 	</repositories>
 	<build>
@@ -45,10 +49,18 @@
 		</plugins>
 	</build>
 	<dependencies>
+		<!-- WorldGuard -->
+		<dependency>
+            <groupId>com.sk89q</groupId>
+            <artifactId>worldguard</artifactId>
+            <version>5.5.4-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/WorldGuard.jar</systemPath>
+        </dependency>
 		<!-- Bukkit -->
 		<dependency>
 			<groupId>org.bukkit</groupId>
-			<artifactId>craftbukkit</artifactId>
+			<artifactId>bukkit</artifactId>
 			<version>1.3.1-R1.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>

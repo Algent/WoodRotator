@@ -1,5 +1,6 @@
 name: ${project.name}
 main: ${project.groupId}.${project.artifactId}.${project.name}
+softdepend: [WorldGuard]
 version: ${project.version}
 author: Algent
 website: ${project.url}
