@@ -1,0 +1,17 @@
+name: ${project.name}
+main: ${project.groupId}.${project.artifactId}.${project.name}
+version: ${project.version}
+author: Algent
+website: ${project.url}
+permissions:
+  woodrotator.*:
+    description: Give you all permissions.
+    children:
+      woodrotator.rotate: true
+      woodrotator.bark: true
+  woodrotator.rotate:
+    description: Allow you to rotate wood.
+    default: true
+  woodrotator.bark:
+    description: Allow you to get the "bark only" wood face while rotating.
+    default: op
