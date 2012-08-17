@@ -7,6 +7,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class WoodRotatorListener implements Listener {
@@ -90,5 +91,47 @@ public class WoodRotatorListener implements Listener {
             break;
         }
         wood.setData(data);
+    }
+
+    @EventHandler
+    public void onBlockPlace(BlockPlaceEvent event) {
+        if (event.isCancelled()) return;
+        final Block block = event.getBlockPlaced();
+        if (block.getType() != Material.LOG) return;
+        if (!event.getPlayer().hasPermission("woodrotator.forceplaceup")) return;
+        plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+            
+            @Override
+            public void run() {
+                Byte data = block.getData();
+                switch (data) {
+                case 0: 
+                case 4: 
+                case 8: 
+                case 12: 
+                    data = 0;
+                    break;
+                case 1: 
+                case 5: 
+                case 9: 
+                case 13: 
+                    data = 1;
+                    break;
+                case 2: 
+                case 6: 
+                case 10: 
+                case 14: 
+                    data = 2;
+                    break;
+                case 3: 
+                case 7: 
+                case 11: 
+                case 15: 
+                    data = 3;
+                    break;
+                }
+                block.setData(data);
+            }
+        });
     }
 }

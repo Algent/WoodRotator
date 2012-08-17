@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.algent</groupId>
 	<artifactId>WoodRotator</artifactId>
-	<version>1.1</version>
+	<version>1.2-SNAPSHOT</version>
 	<name>WoodRotator</name>
 	<url>https://github.com/Algent/WoodRotator</url>
 	<description>Plugin for bukkit to rotate wood blocks.</description>
@@ -34,7 +34,7 @@
 			</resource>
 		</resources>
 		<defaultGoal>clean install</defaultGoal>
-		<finalName>${project.artifactId}</finalName>
+		<finalName>${project.artifactId}-v${project.version}</finalName>
 		<!-- Plugins -->
 		<plugins>
 			<!-- Compile plugin -->

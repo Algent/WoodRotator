@@ -10,9 +10,13 @@ permissions:
     children:
       woodrotator.rotate: true
       woodrotator.bark: true
+      woodrotator.forceplaceup: false
   woodrotator.rotate:
     description: Allow you to rotate wood.
     default: true
   woodrotator.bark:
     description: Allow you to get the "bark only" wood face while rotating.
     default: op
+  woodrotator.forceplaceup:
+    description: Force placed wood to face up.
+    default: false
