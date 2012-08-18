@@ -17,6 +17,6 @@ permissions:
   woodrotator.bark:
     description: Allow you to get the "bark only" wood face while rotating.
     default: op
-  woodrotator.forceplaceup:
+  woodrotatorplace.forceup:
     description: Force placed wood to face up.
     default: false

@@ -98,7 +98,7 @@ public class WoodRotatorListener implements Listener {
         if (event.isCancelled()) return;
         final Block block = event.getBlockPlaced();
         if (block.getType() != Material.LOG) return;
-        if (!event.getPlayer().hasPermission("woodrotator.forceplaceup")) return;
+        if (!event.getPlayer().hasPermission("woodrotatorplace.forceup")) return;
         plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
             
             @Override
