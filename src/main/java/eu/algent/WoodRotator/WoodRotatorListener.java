@@ -20,6 +20,10 @@ public class WoodRotatorListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
+        // Check if Axe in Hand (258, 271, 275, 279, 286)
+        int id = player.getItemInHand().getTypeId();
+        if (id == 258 || id == 271 || id == 275 || id == 279 || id == 286)
+            return;
         // Check if left click + sneaking
         if (!(event.getAction().equals(Action.LEFT_CLICK_BLOCK) 
                 && player.isSneaking())) return;
