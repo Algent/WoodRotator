@@ -1,6 +1,7 @@
 package eu.algent.WoodRotator;
 
 import org.bukkit.ChatColor;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -40,6 +41,9 @@ public class WoodRotatorListener implements Listener {
         Boolean barkFace = player.hasPermission("woodrotator.bark");
         // Rotate Wood
         rotateWood(block, barkFace);
+        // Cancel destroy event if Creative Mode
+        if (player.getGameMode().equals(GameMode.CREATIVE))
+            event.setCancelled(true);
     }
 
     public void rotateWood(Block wood, Boolean barkFace) {
